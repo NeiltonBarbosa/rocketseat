@@ -35,9 +35,10 @@ const storageTypes = {
     acl: 'public-read',
     key: (req, file, cb) => {
       const hash = crypto.randomBytes(10).toString('hex');
-      const filename = `${hash}-${file.originalname}`;
+      const key = `${hash}-${file.originalname}`;
 
-      return cb(null, filename);
+
+      return cb(null, key);
     },
   }),
 };
